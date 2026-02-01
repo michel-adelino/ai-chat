@@ -12,14 +12,14 @@ export function HomeClient() {
     <>
       <Link
         href="/chat"
-        className="text-sm font-medium text-foreground hover:opacity-80"
+        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
       >
         Chat
       </Link>
       <button
         type="button"
         onClick={handleLogout}
-        className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:opacity-80"
+        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
       >
         Log out
       </button>

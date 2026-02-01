@@ -32,12 +32,12 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4">
-      <div className="w-full max-w-sm space-y-6 rounded-lg border border-black/[.08] bg-white p-6 dark:border-white/[.145] dark:bg-black/[.2]">
-        <h1 className="text-center text-xl font-semibold">Sign up</h1>
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 bg-gradient-to-b from-muted/20 to-transparent">
+      <div className="w-full max-w-sm space-y-6 rounded-2xl border border-border bg-card p-8 shadow-card">
+        <h1 className="text-center text-2xl font-semibold tracking-tight">Sign up</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="mb-1 block text-sm font-medium">
+            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-card-foreground">
               Email
             </label>
             <input
@@ -46,12 +46,12 @@ export default function SignupPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full rounded border border-black/[.08] bg-transparent px-3 py-2 text-sm dark:border-white/[.145]"
+              className="w-full rounded-xl border border-border bg-muted/30 px-4 py-3 text-[15px] placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
               placeholder="you@example.com"
             />
           </div>
           <div>
-            <label htmlFor="password" className="mb-1 block text-sm font-medium">
+            <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-card-foreground">
               Password
             </label>
             <input
@@ -61,7 +61,7 @@ export default function SignupPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
-              className="w-full rounded border border-black/[.08] bg-transparent px-3 py-2 text-sm dark:border-white/[.145]"
+              className="w-full rounded-xl border border-border bg-muted/30 px-4 py-3 text-[15px] placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
           {error && (
@@ -70,14 +70,14 @@ export default function SignupPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded bg-foreground py-2 text-sm font-medium text-background hover:opacity-90 disabled:opacity-50"
+            className="w-full rounded-xl bg-accent py-3 text-sm font-semibold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90 disabled:opacity-50"
           >
             {loading ? "Creating account…" : "Create account"}
           </button>
         </form>
-        <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
-          <Link href="/login" className="underline hover:no-underline">
+          <Link href="/login" className="font-medium text-accent hover:underline">
             Log in
           </Link>
         </p>

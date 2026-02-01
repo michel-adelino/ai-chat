@@ -2,20 +2,22 @@ import Link from "next/link";
 
 export default function SubscribeCancelPage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-6 rounded-lg border border-black/[.08] bg-white p-8 text-center dark:border-white/[.145] dark:bg-black/[.2]">
-        <h1 className="text-2xl font-semibold">Checkout canceled</h1>
-        <p className="text-zinc-600 dark:text-zinc-400">
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 bg-gradient-to-b from-muted/20 to-transparent">
+      <div className="w-full max-w-md space-y-6 rounded-2xl border border-border bg-card p-8 text-center shadow-card">
+        <h1 className="text-2xl font-semibold tracking-tight text-card-foreground">
+          Checkout canceled
+        </h1>
+        <p className="text-muted-foreground leading-relaxed">
           You can subscribe anytime to access the chat feature.
         </p>
         <Link
           href="/paywall"
-          className="inline-block w-full rounded bg-foreground py-3 text-center text-sm font-medium text-background hover:opacity-90"
+          className="inline-block w-full rounded-2xl bg-accent py-3.5 text-center text-sm font-semibold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90"
         >
           Try again
         </Link>
-        <p className="text-sm text-zinc-500 dark:text-zinc-500">
-          <Link href="/" className="underline hover:no-underline">
+        <p className="text-sm text-muted-foreground">
+          <Link href="/" className="font-medium text-accent hover:underline">
             Back to home
           </Link>
         </p>
